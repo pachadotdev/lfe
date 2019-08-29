@@ -12,3 +12,4 @@
 *.cache
 # emacs backup
 *~
+.Rproj.user
