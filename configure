@@ -3356,7 +3356,7 @@ fi
 # which indicates that we try without any flags at all, and "pthread-config"
 # which is a program returning the flags for the Pth emulation library.
 
-ax_pthread_flags="pthreads none -Kthread -pthread -pthreads -mthreads pthread --thread-safe -mt pthread-config"
+ax_pthread_flags="pthreads none -Kthread -pthread -pthreads -mthreads pthread --thread-safe pthread-config"
 
 # The ordering *is* (sometimes) important.  Some notes on the
 # individual items follow:
@@ -3393,7 +3393,7 @@ case $host_os in
         # From the cc(1) man page: "[-mt] Sets various -D flags to enable
         # multi-threading and also sets -lpthread."
 
-        ax_pthread_flags="-mt -pthread pthread $ax_pthread_flags"
+        ax_pthread_flags="-pthread pthread $ax_pthread_flags"
         ;;
 
         openedition*)
@@ -3430,7 +3430,7 @@ rm -f conftest*
         # that too in a future libc.)  So we'll check first for the
         # standard Solaris way of linking pthreads (-mt -lpthread).
 
-        ax_pthread_flags="-mt,pthread pthread $ax_pthread_flags"
+        ax_pthread_flags="pthread pthread $ax_pthread_flags"
         ;;
 esac
 
@@ -3605,10 +3605,9 @@ for ax_pthread_try_flag in $ax_pthread_flags; do
 $as_echo_n "checking whether pthreads work without any flags... " >&6; }
                 ;;
 
-                -mt,pthread)
-                { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether pthreads work with -mt -lpthread" >&5
-$as_echo_n "checking whether pthreads work with -mt -lpthread... " >&6; }
-                PTHREAD_CFLAGS="-mt"
+                pthread)
+                { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether pthreads work with -lpthread" >&5
+$as_echo_n "checking whether pthreads work with -lpthread... " >&6; }
                 PTHREAD_LIBS="-lpthread"
                 ;;
 
