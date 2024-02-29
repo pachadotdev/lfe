@@ -3,9 +3,12 @@
 ^cran-comments\.md$
 ^\.github$
 ^README\.Rmd$
+^README\.html$
 ^\.vscode$
 ^vscode-install.r$
 ^benchmarks$
 ^CRAN-SUBMISSION$
 ^LICENSE\.md$
 ^dev$
+^docs$
+^tests/\.RData$

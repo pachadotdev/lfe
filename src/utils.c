@@ -1,3 +1,5 @@
+#include <inttypes.h>
+
 #include "lfe.h"
 
 #define USE_FC_LEN_T
@@ -23,8 +25,8 @@ SEXP MY_scalecols(SEXP mat, SEXP vec) {
     }
   } else {
     if (row != LENGTH(vec))
-      error("length of vector %d is different from number of rows %ld",
-            LENGTH(vec), row);
+      error("length of vector %d is different from number of rows %" PRIdMAX,
+            LENGTH(vec), (intmax_t)row);
     double *cmat = REAL(mat);
     double *cvec = REAL(AS_NUMERIC(vec));
     for (mybigint_t j = 0; j < col; j++) {

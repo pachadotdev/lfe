@@ -368,7 +368,7 @@ static int demeanlist(double **vp, int N, int K, double **res, double *weights,
 #ifdef WIN
   lock = CreateMutex(NULL, FALSE, NULL);
   if (lock == NULL) {
-    error("Couldn't create mutex (error=%d)", GetLastError());
+    error("Couldn't create mutex (error=%lu)", GetLastError());
   }
   threads = (HANDLE *)R_alloc(numthr, sizeof(HANDLE));
   threadids = (DWORD *)R_alloc(numthr, sizeof(DWORD));
