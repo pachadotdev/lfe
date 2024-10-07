@@ -1,4 +1,6 @@
 #include "lfe.h"
+#include <Rinternals.h>
+
 static void invertfactor(FACTOR *f, int N) {
   int nlev = f->nlevels;
   int *curoff;
