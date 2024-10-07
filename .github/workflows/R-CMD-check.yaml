@@ -41,6 +41,18 @@ jobs:
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
 
+      - name: Install TeX (Ubuntu)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-full
+
+      - name: Install TeX (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          brew install --cask mactex-no-gui
+          sudo tlmgr update --self
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::rcmdcheck
