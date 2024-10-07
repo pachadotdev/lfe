@@ -51,7 +51,8 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install --cask mactex-no-gui
-          sudo tlmgr update --self
+          echo 'eval "$(/usr/libexec/path_helper)"' >> $GITHUB_ENV
+          echo '/Library/TeX/texbin' >> $GITHUB_PATH
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
