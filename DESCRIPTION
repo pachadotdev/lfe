@@ -1,5 +1,5 @@
 Package: lfe
-Version: 3.0-0
+Version: 3.1.0
 Title: Linear Group Fixed Effects
 Authors@R: c(
   person(given = "Simen",
