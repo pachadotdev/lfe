@@ -12,11 +12,9 @@
 *.cache
 *~
 # emacs backup
-<<<<<<< HEAD
 # Rproj files
 .Rproj.user
 # Build files
-config.*
 src/config.h
 src/texput.log
 src/Makevars
@@ -25,3 +23,5 @@ src/Makevars
 #*.Rbuildignore
 .Rhistory
 .vscode
+config.status
+config.log
