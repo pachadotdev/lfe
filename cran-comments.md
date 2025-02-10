@@ -8,4 +8,4 @@
 
 ## Package adopted
 
-* This version solves the issue raised by CRAN maintainers: "warning: function declaration isn’t a prototype".
+* This version adds the diff suggested by Dr. Kurt Hornik.
